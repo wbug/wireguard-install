@@ -46,12 +46,11 @@ iptables-save
 53:  
 //安装  
 wget https://git.io/wireguard -O wireguard-install.sh  
-sed -i "s/10.7.0/10.10.53/g" \`grep 10.10.20 -rl ./wireguard-install.sh\`   
+sed -i "s/10.7.0/10.10.53/g" \`grep 10.7.0 -rl ./wireguard-install.sh\`   
 chmod +x wireguard-install.sh  
 ./wireguard-install.sh  
   
 //restart .. 最好保存为  restart.sh 
-service firewalld start  
 service wg-quick@wg0 restart  
 iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.53.22:44158  
 iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.53.22:44158  
