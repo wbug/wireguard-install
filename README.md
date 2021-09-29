@@ -19,7 +19,7 @@ If you want to show your appreciation, you can donate via [PayPal](https://www.p
 
 
 
-
+//unbuntu 20.4(腾讯轻应用服务器）
 
 52:  
 //安装  
