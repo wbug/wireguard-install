@@ -16,3 +16,68 @@ You can get a VPS from just $1/month at [VirMach](https://billing.virmach.com/af
 ### Donations
 
 If you want to show your appreciation, you can donate via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VBAYDL34Z7J6L) or [cryptocurrency](https://pastebin.com/raw/M2JJpQpC). Thanks!
+
+
+
+
+
+52:  
+//安装  
+wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
+sed -i "s/10.10.20/10.10.52/g" \`grep 10.10.20 -rl ./wgs.sh\`  
+chmod +x wgs.sh  
+service firewalld start  
+./wgs.sh  
+  
+//restart .. 最好保存为  restart.sh 
+service firewalld start  
+service wg-quick@wg0 restart  
+iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.52.22:44158  
+iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.52.22:44158  
+iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.52.22:80  
+iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.52.22:22  
+iptables-save  
+
+
+
+
+
+
+53:  
+//安装  
+wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
+sed -i "s/10.10.20/10.10.53/g" \`grep 10.10.20 -rl ./wgs.sh\`  
+chmod +x wgs.sh  
+service firewalld start  
+./wgs.sh  
+  
+//restart .. 最好保存为  restart.sh 
+service firewalld start  
+service wg-quick@wg0 restart  
+iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.53.22:44158  
+iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.53.22:44158  
+iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.53.22:80  
+iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.53.22:22  
+iptables-save   
+
+
+
+
+54:  
+//安装   
+wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
+sed -i "s/10.10.20/10.10.54/g" \`grep 10.10.20 -rl ./wgs.sh\`  
+chmod +x wgs.sh  
+service firewalld start  
+./wgs.sh  
+  
+//restart .. 最好保存为  restart.sh 
+service firewalld start  
+service wg-quick@wg0 restart  
+iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.54.22:44158  
+iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.54.22:44158  
+iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.54.22:80  
+iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.54.22:22  
+iptables-save  
+
+
