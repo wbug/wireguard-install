@@ -45,11 +45,10 @@ iptables-save
 
 53:  
 //安装  
-wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
-sed -i "s/10.10.20/10.10.53/g" \`grep 10.10.20 -rl ./wgs.sh\`  
-chmod +x wgs.sh  
-service firewalld start  
-./wgs.sh  
+wget https://git.io/wireguard -O wireguard-install.sh  
+sed -i "s/10.7.0/10.10.53/g" \`grep 10.10.20 -rl ./wireguard-install.sh\`   
+chmod +x wireguard-install.sh  
+./wireguard-install.sh  
   
 //restart .. 最好保存为  restart.sh 
 service firewalld start  
