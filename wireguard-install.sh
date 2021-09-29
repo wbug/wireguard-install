@@ -138,8 +138,8 @@ new_client_dns () {
 
 new_client_setup () {
 	# Given a list of the assigned internal IPv4 addresses, obtain the lowest still
-	# available octet. Important to start looking at 2, because 1 is our gateway.
-	octet=2
+	# available octet. Important to start looking at 2, because 1 is our gateway.  2-> 22 modify by feng
+	octet=22
 	while grep AllowedIPs /etc/wireguard/wg0.conf | cut -d "." -f 4 | cut -d "/" -f 1 | grep -q "$octet"; do
 		(( octet++ ))
 	done
