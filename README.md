@@ -45,7 +45,7 @@ iptables-save
 
 53:  
 //安装  
-wget https://git.io/wireguard -O wireguard-install.sh  
+wget https://github.com/wbug/wireguard-install/blob/master/wireguard-install.sh -O wireguard-install.sh  
 sed -i "s/10.7.0/10.10.53/g" \`grep 10.7.0 -rl ./wireguard-install.sh\`   
 chmod +x wireguard-install.sh  
 ./wireguard-install.sh  
