@@ -22,21 +22,7 @@ If you want to show your appreciation, you can donate via [PayPal](https://www.p
 //unbuntu 20.4(腾讯轻应用服务器）
 
 52:  
-//安装  
-wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
-sed -i "s/10.10.20/10.10.52/g" \`grep 10.10.20 -rl ./wgs.sh\`  
-chmod +x wgs.sh  
-service firewalld start  
-./wgs.sh  
-  
-//restart .. 最好保存为  restart.sh 
-service firewalld start  
-service wg-quick@wg0 restart  
-iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.52.22:44158  
-iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.52.22:44158  
-iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.52.22:80  
-iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.52.22:22  
-iptables-save  
+.....
 
 
 
@@ -45,7 +31,7 @@ iptables-save
 
 53:  
 //安装  
-wget https://github.com/wbug/wireguard-install/blob/master/wireguard-install.sh -O wireguard-install.sh  
+wget https://raw.githubusercontent.com/wbug/wireguard-install/master/wireguard-install.sh -O wireguard-install.sh  
 sed -i "s/10.7.0/10.10.53/g" \`grep 10.7.0 -rl ./wireguard-install.sh\`   
 chmod +x wireguard-install.sh  
 ./wireguard-install.sh  
@@ -62,20 +48,4 @@ iptables-save
 
 
 54:  
-//安装   
-wget -q -O wgs.sh https://raw.githubusercontent.com/chinashiyu/wireguard/master/wg.txt  
-sed -i "s/10.10.20/10.10.54/g" \`grep 10.10.20 -rl ./wgs.sh\`  
-chmod +x wgs.sh  
-service firewalld start  
-./wgs.sh  
-  
-//restart .. 最好保存为  restart.sh 
-service firewalld start  
-service wg-quick@wg0 restart  
-iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.54.22:44158  
-iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.54.22:44158  
-iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.54.22:80  
-iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.54.22:22  
-iptables-save  
-
-
+....
