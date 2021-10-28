@@ -53,10 +53,22 @@ iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.53.22:4415
 iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.53.22:44158  
 iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.53.22:80  
 iptables -t nat -I PREROUTING -p tcp --dport 44122 -j DNAT --to 10.10.53.22:22  
-iptables-save   
 
 
 
 
 54:  
-....
+
+//安装  
+wget https://raw.githubusercontent.com/wbug/wireguard-install/master/wireguard-install.sh -O wireguard-install.sh  
+sed -i "s/10.7.0/10.10.54/g" \`grep 10.7.0 -rl ./wireguard-install.sh\`   
+chmod +x wireguard-install.sh  
+./wireguard-install.sh  
+  
+//restart .. 最好保存为  restart.sh  
+service wg-quick@wg0 restart  
+iptables -t nat -I PREROUTING -p tcp --dport 44158 -j DNAT --to 10.10.54.22:44158  
+iptables -t nat -I PREROUTING -p udp --dport 44158 -j DNAT --to 10.10.54.22:44158  
+iptables -t nat -I PREROUTING -p tcp --dport 44180 -j DNAT --to 10.10.54.22:80  
+iptables -t nat -I PREROUTIN  
+
