@@ -76,3 +76,106 @@ iptables -t nat -A POSTROUTING  -d 10.10.54.22    -p tcp --dport 80  -j SNAT --t
 iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44122 -j DNAT --to 10.10.54.22:22  
 
 
+
+55:  
+
+//安装  
+wget https://raw.githubusercontent.com/wbug/wireguard-install/master/wireguard-install.sh -O wireguard-install.sh  
+sed -i "s/10.7.0/10.10.55/g" \`grep 10.7.0 -rl ./wireguard-install.sh\`   
+chmod +x wireguard-install.sh  
+./wireguard-install.sh  
+  
+//restart .. 最好保存为  restart.sh  
+service wg-quick@wg0 restart
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44158 -j DNAT --to 10.10.55.22:44158  
+iptables -t nat -I PREROUTING -p udp -d 10.0.4.??  --dport 44158 -j DNAT --to 10.10.55.22:44158  
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44180 -j DNAT --to 10.10.55.22:80  
+iptables -t nat -A POSTROUTING  -d 10.10.55.22    -p tcp --dport 80  -j SNAT --to-source 10.10.55.1  
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44122 -j DNAT --to 10.10.55.22:22  
+
+
+
+
+
+56:  
+
+//安装  
+wget https://raw.githubusercontent.com/wbug/wireguard-install/master/wireguard-install.sh -O wireguard-install.sh  
+sed -i "s/10.7.0/10.10.56/g" \`grep 10.7.0 -rl ./wireguard-install.sh\`   
+chmod +x wireguard-install.sh  
+./wireguard-install.sh  
+  
+//restart .. 最好保存为  restart.sh  
+service wg-quick@wg0 restart
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44158 -j DNAT --to 10.10.56.22:44158  
+iptables -t nat -I PREROUTING -p udp -d 10.0.4.??  --dport 44158 -j DNAT --to 10.10.56.22:44158  
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44180 -j DNAT --to 10.10.56.22:80  
+iptables -t nat -A POSTROUTING  -d 10.10.55.22    -p tcp --dport 80  -j SNAT --to-source 10.10.56.1  
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44122 -j DNAT --to 10.10.56.22:22  
+
+
+
+
+57:
+
+55:  
+
+//安装  
+wget https://raw.githubusercontent.com/wbug/wireguard-install/master/wireguard-install.sh -O wireguard-install.sh  
+sed -i "s/10.7.0/10.10.57/g" \`grep 10.7.0 -rl ./wireguard-install.sh\`   
+chmod +x wireguard-install.sh  
+./wireguard-install.sh  
+  
+//restart .. 最好保存为  restart.sh  
+service wg-quick@wg0 restart
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44158 -j DNAT --to 10.10.57.22:44158  
+iptables -t nat -I PREROUTING -p udp -d 10.0.4.??  --dport 44158 -j DNAT --to 10.10.57.22:44158  
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44180 -j DNAT --to 10.10.57.22:80  
+iptables -t nat -A POSTROUTING  -d 10.10.55.22    -p tcp --dport 80  -j SNAT --to-source 10.10.57.1  
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44122 -j DNAT --to 10.10.57.22:22  
+
+
+
+
+58:  
+
+//安装  
+wget https://raw.githubusercontent.com/wbug/wireguard-install/master/wireguard-install.sh -O wireguard-install.sh  
+sed -i "s/10.7.0/10.10.58/g" \`grep 10.7.0 -rl ./wireguard-install.sh\`   
+chmod +x wireguard-install.sh  
+./wireguard-install.sh  
+  
+//restart .. 最好保存为  restart.sh  
+service wg-quick@wg0 restart
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44158 -j DNAT --to 10.10.58.22:44158  
+iptables -t nat -I PREROUTING -p udp -d 10.0.4.??  --dport 44158 -j DNAT --to 10.10.58.22:44158  
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44180 -j DNAT --to 10.10.58.22:80  
+iptables -t nat -A POSTROUTING  -d 10.10.55.22    -p tcp --dport 80  -j SNAT --to-source 10.10.58.1  
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44122 -j DNAT --to 10.10.58.22:22  
+
+
+
+
+59:  
+
+//安装  
+wget https://raw.githubusercontent.com/wbug/wireguard-install/master/wireguard-install.sh -O wireguard-install.sh  
+sed -i "s/10.7.0/10.10.59/g" \`grep 10.7.0 -rl ./wireguard-install.sh\`   
+chmod +x wireguard-install.sh  
+./wireguard-install.sh  
+  
+//restart .. 最好保存为  restart.sh  
+service wg-quick@wg0 restart
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44158 -j DNAT --to 10.10.59.22:44158  
+iptables -t nat -I PREROUTING -p udp -d 10.0.4.??  --dport 44158 -j DNAT --to 10.10.59.22:44158  
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44180 -j DNAT --to 10.10.59.22:80  
+iptables -t nat -A POSTROUTING  -d 10.10.55.22    -p tcp --dport 80  -j SNAT --to-source 10.10.59.1  
+iptables -t nat -I PREROUTING -p tcp -d 10.0.4.??  --dport 44122 -j DNAT --to 10.10.59.22:22  
+
+
+
+
+
+
+
+
